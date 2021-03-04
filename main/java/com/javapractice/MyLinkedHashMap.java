@@ -44,7 +44,6 @@ public class MyLinkedHashMap<K,V> {
             myMapNode.setValue(value);
         }
     }
-
     @Override
     public String toString() {
         return "MyLinkedHashMap{" +
