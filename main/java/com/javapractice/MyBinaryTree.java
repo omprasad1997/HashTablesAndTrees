@@ -1,7 +1,7 @@
 package com.javapractice;
 
 public class MyBinaryTree<K extends  Comparable<K>> {
-    private MyBinaryNode<K> root;
+    public MyBinaryNode<K> root;
 
     public void add(K key) {
         this.root = this.addRecursively(root,key);
@@ -26,5 +26,19 @@ public class MyBinaryTree<K extends  Comparable<K>> {
     private int getSizeRecursive(MyBinaryNode<K> current) {
         return current == null ? 0 : 1 + this.getSizeRecursive(current.left)
                                         + this.getSizeRecursive(current.right);
+    }
+
+    public K searchNode(MyBinaryNode<Integer> root, K value) {
+
+        if(root == null)
+            return value;
+
+        if(this.root.key == value)
+            return value;
+
+        int answer = value.compareTo((K) root.key);
+        if(answer < 0) return searchNode(root.left,value) ;
+        else            return searchNode(root.right,value);
+
     }
 }
