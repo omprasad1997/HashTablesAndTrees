@@ -21,6 +21,10 @@ public class MyLinkedHashMapTest {
         System.out.println(myLinkedHashMap);
         int frequency =myLinkedHashMap.get("paranoid");
         Assertions.assertEquals(3,frequency);
+    }
+
+    @Test
+    void givenASentencesWhenWordsAreAddedToListShouldRemoveAvoidableWord() {
 
     }
 }
